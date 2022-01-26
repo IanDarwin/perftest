@@ -1,0 +1,5 @@
+: darian; nawk -f awk.lib.-f -f awk.lib.main /dev/null
+Hello
+42 43
+Done
+: darian; 

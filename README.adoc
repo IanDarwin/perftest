@@ -1,0 +1,6 @@
+= lt396add
+
+Extra files for students of 
+https://learningtree.com/396[Learning Tree Course 396, Unix Tools & Utilities].
+
+May be useful to others, but probably not.

@@ -1,0 +1,15 @@
+function try {
+	if
+		[ -f ${file} ]
+		grep -s Romeo $file
+	then
+		echo ${file} is a regular file and contains Romeo.
+	else
+		echo ${file} not reg or not Romeo.
+	fi
+}
+file=j.dat
+echo Romeo > $file
+try
+date > $file
+try

@@ -1,0 +1,39 @@
+#!/bin/sh
+
+# compare various languages on "fmt" - simple text handling task
+
+# List of versions that don't need special handling
+# Note: awk and Java treated specially after main loop
+PROGS="./fmt /usr/bin/fmt fmt.bash fmt.ksh fmt.pl fmt.py fmt.sh"
+
+# Short version for testing
+PROGS="./fmt /usr/bin/fmt fmt.ksh fmt.pl fmt.py"
+
+# Pick a time command whose first "word" is the clock time in seconds
+# TIME=time
+TIME=/usr/bin/time
+
+(
+	for prog in ${PROGS}
+		do for size in small medium large
+			do echo -n $prog $size; ${TIME} $prog <$size 1>/dev/null # 2>/dev/stdout
+		done
+	done
+
+	for awk in awk nawk gawk hawk mawk
+	do 
+		if echo hello|$awk '{print}'>/dev/null 2>&1; then
+			for size in small medium large
+				do
+					echo -n "$awk $size"; ${TIME} $awk -f fmt.awk <$size 1>/dev/null # 2>/dev/stdout
+				done
+		fi
+	done
+
+	if [ -s Fmt.class ]; then
+		for size in small medium large
+		do
+			echo -n java $size; ${TIME} java Fmt <$size >/dev/null
+		done; 
+	fi
+) | cat # mkreport
