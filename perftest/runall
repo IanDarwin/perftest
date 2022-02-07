@@ -2,12 +2,14 @@
 
 # compare various languages on "fmt" - simple text handling task
 
+# recommended to run "make" instead of this script directly
+
 # List of versions that don't need special handling
 # Note: awk and Java treated specially after main loop
 PROGS="./fmt /usr/bin/fmt fmt.bash fmt.ksh fmt.pl fmt.py fmt.sh"
 
 # Short version for testing
-PROGS="./fmt /usr/bin/fmt fmt.ksh fmt.pl fmt.py"
+# PROGS="./fmt /usr/bin/fmt fmt.ksh fmt.pl fmt.py"
 
 # Pick a time command whose first "word" is the clock time in seconds
 # TIME=time
