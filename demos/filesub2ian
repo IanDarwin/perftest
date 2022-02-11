@@ -1,0 +1,42 @@
+# File: filesub2Ian
+# Solution to Hands-On Exercise 7.1 #2
+
+# Do string substitutions in multiple files
+# Usage: filesub2Ian file ...
+# This script will prompt for old and new strings
+# Should really come from the command line, as in replace(1)
+
+if [ "$#" -eq 0 ]
+then
+    echo "Usage: $0 file ...  "
+    exit 1
+fi
+
+echo -n "Enter oldstring: "
+read oldStr
+echo -n "Enter newstring: "
+read newStr
+
+# CONTINUED...
+
+# CONTINUED FROM PREVIOUS PAGE
+
+for file in $*
+do
+	cp "$file" "$file".bak
+	if [ $? != 0 ]; then echo backup failed; exit 2; fi
+
+	TMP=$(mktemp)
+	sed "s/$oldStr/$newStr/g" "$file"  > $TMP
+	if [ $? != 0 ]; then echo sed failed; exit 3; fi
+	    
+	cp ${TMP} "$file".new && 
+		mv "$file".new "$file"
+	if [ $? != 0 ]; then echo move failed; exit 4; fi
+
+	rm -f ${TMP}
+
+	# New version: replace entire content of loop body
+	# sed -i.bak -e "s/$oldStr/$newStr/g" "$file"
+	echo "Changed $oldStr to $newStr in $file"
+done
