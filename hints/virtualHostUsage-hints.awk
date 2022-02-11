@@ -6,7 +6,7 @@
 # virtual host, display results in kilobytes
 
 BEGIN {
-    # Check that two cmd-line args are present (hint: ARGC)
+	# OPTIONAL: Check that two cmd-line args are present (hint: ARGC)
 	# If NOT, print an error message and exit with a non-zero return
     }
 }
