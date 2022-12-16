@@ -1,8 +1,7 @@
-= lt396add
+= lt396add: Shell Performance Test and misc
 
 Extra files for students of 
 https://learningtree.com/396[Learning Tree Course 396, Unix Tools & Utilities].
 
 The main part is the shell performance test, in the perftest folder.
-
-May be useful to others, but probably not.
+This compares the running time of numerous interpreters and ranks them by speed.
