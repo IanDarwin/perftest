@@ -15,8 +15,8 @@ $2=="large"{
 	large[$1] = $3
 	}
 END {
-	printf "%-12s\t\t%6s\t\t%6s\t\t%6s %s\n", "Language", "2k", "18k", "500k", "(sort col)"
+	printf "%-15s\t\t%6s\t\t%6s\t\t%6s %s\n", "Language", "2k", "18k", "500k", "(sort col)"
 	for (prog in small) {
-		printf "%-12s\t\t%6.2f\t\t%6.2f\t\t%6.2f\n", prog, small[prog], medium[prog], large[prog]
+		printf "%-15s\t\t%6.2f\t\t%6.2f\t\t%6.2f\n", prog, small[prog], medium[prog], large[prog]
 	}
 }' $* |sort -rn -k4

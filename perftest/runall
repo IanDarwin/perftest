@@ -35,7 +35,8 @@ TIME=/usr/bin/time
 	if [ -s Fmt.class ]; then
 		for size in small medium large
 		do
-			echo -n java $size; ${TIME} java Fmt <$size >/dev/null
+			echo -n 'java(run:class)' $size; ${TIME} java Fmt <$size >/dev/null
+			echo -n 'java(run:.java)' $size; ${TIME} java Fmt.java <$size >/dev/null
 		done; 
 	fi
 ) | cat # mkreport
