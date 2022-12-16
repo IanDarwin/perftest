@@ -8,7 +8,7 @@
 PROGS="./fmt /usr/bin/fmt fmt.bash fmt.ksh fmt.pl fmt.py fmt.sh"
 
 # Short version for testing
-# PROGS="./fmt /usr/bin/fmt fmt.ksh fmt.pl fmt.py"
+PROGS="./fmt /usr/bin/fmt fmt.ksh fmt.pl fmt.py"
 
 # Note: awk and Java treated specially after main loop
 # Java, and various *awk impls, easily added on OpenBSD via pkg_add
@@ -17,6 +17,7 @@ PROGS="./fmt /usr/bin/fmt fmt.bash fmt.ksh fmt.pl fmt.py fmt.sh"
 # Pick a time command whose first "word" is the clock time in seconds
 # TIME=time
 TIME=/usr/bin/time
+TMP=$(mktemp /tmp/$0XXXXXXXXX)
 
 (
 	for prog in ${PROGS}
@@ -42,4 +43,23 @@ TIME=/usr/bin/time
 			echo -n 'java(run:.java)' $size; ${TIME} java Fmt.java <$size >/dev/null
 		done; 
 	fi
-) | cat # mkreport
+) > ${TMP} 2>&1
+
+# Now extract the results from make output
+
+awk '
+$2=="small"{
+	small[$1] = $3
+	}
+$2=="medium"{
+	medium[$1] = $3
+	}
+$2=="large"{
+	large[$1] = $3
+	}
+END {
+	printf "%-15s\t\t%6s\t\t%6s\t\t%6s %s\n", "Language", "2k", "18k", "500k", "(sort col)"
+	for (prog in small) {
+		printf "%-15s\t\t%6.2f\t\t%6.2f\t\t%6.2f\n", prog, small[prog], medium[prog], large[prog]
+	}
+}' ${TMP} |sort -rn -k4
