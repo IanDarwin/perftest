@@ -1,7 +1,5 @@
 report:	large fmt Fmt.class
-	rm -f /tmp/id
-	runall >/tmp/id 2>&1
-	mkreport < /tmp/id
+	runall 
 
 fmt:	fmt.c
 	$(CC) $? -o $@
