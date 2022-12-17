@@ -1,7 +1,19 @@
-= lt396add: Shell Performance Test and misc
+= perftest: Shell/Interpreters Performance Comparison
 
-Extra files for students of 
-https://learningtree.com/396[Learning Tree Course 396, Unix Tools & Utilities].
-
-The main part is the shell performance test, in the perftest folder.
+This repo is the shell/interpreter/language performance test.
 This compares the running time of numerous interpreters and ranks them by speed.
+The result is a nice little table, shown in results.txt
+
+We time various languages in a simple task, that of
+running "fmt", a simple text formatter that just fills lines to a
+maximum length. Some versions written by previous Learning Tree Course 396
+author Mike Woinowski. Java and Python versions by Ian Darwin.
+
+Data files: small: 
+		The source code (err, script) for the play
+		"Two Gentlemen of Verona" by William Shakespeare (out of copyright!).
+	Medium - two copies of small
+	Large - 5 copies 
+
+Use the Makefile: just run "make" and you should get all the stats.
+

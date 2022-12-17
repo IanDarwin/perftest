@@ -1,0 +1,11 @@
+Language       		    2k		   18k		  500k (sort col)
+fmt.ksh        		  0.00		  0.04		  1.38
+java(run:.java)		  0.58		  0.59		  0.67
+java(run:class)		  0.07		  0.09		  0.14
+fmt.pl         		  0.01		  0.01		  0.13
+gawk           		  0.00		  0.00		  0.11
+fmt.py         		  0.02		  0.03		  0.11
+awk            		  0.00		  0.00		  0.11
+/usr/bin/fmt   		  0.00		  0.00		  0.04
+mawk           		  0.00		  0.00		  0.03
+./fmt          		  0.00		  0.00		  0.01

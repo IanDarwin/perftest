@@ -1,5 +1,0 @@
-BEGIN	{
-	print "Hello"
-	print 42, x(42)
-	print "Done"
-	}
