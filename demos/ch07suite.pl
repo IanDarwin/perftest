@@ -5,10 +5,10 @@ sub trying {
         print "Trying items $_[0]\n";
 }
 
-# &trying("Caveats, page 10");
-#$favfird = "Ostrich";
-#print $favbird;
-#print "item is $favfird" if defined $favfird;
+&trying("Caveats, page 10");
+$favbird = "Ostrich";
+print $favbird"\n";
+print "item is $favbird\n" if defined $favbird;
 
 # &trying("Perl's Special Variables", page 18");
 #@a = ("gone", "with", "the", "wind");
@@ -16,10 +16,10 @@ sub trying {
 #       print
 #}
 
-# &trying("Other Control Expressions, page 20");
-#$n = 41;
-#$n < 42 && print "$n\n";
-#$n >= 42 || print "$n\n";
+&trying("Other Control Expressions, page 20");
+$n = 41;
+$n < 42 && print "$n\n";
+$n >= 42 || print "$n\n";
 
 #&trying("Extensibility 1: Subroutines, p 22");
 #sub x {
