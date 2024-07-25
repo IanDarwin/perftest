@@ -3,6 +3,11 @@
 Patterned after a shorter comparison in
 https://learningtree.com/396[Learning Tree Course 396, Unix Tools & Utilities].
 
+== Broken!
+
+This depends on the original BSD version of the time command; I will either add 
+that here, or change the report gatherer to adapt to other variants of "time".
+
 == Pre-requisites
 
 You need to install a Java SDK ("JDK"). The current release is Java 22, but
