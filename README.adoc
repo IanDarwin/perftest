@@ -21,5 +21,9 @@ the one you want.
 
 == Running
 
-Just type "make". The results will be displayed, and also recorded in 
+Just type `make`. The results will be displayed, and also recorded in 
 the file "results".
+
+If you don't have `make` installed, just do `sh runall` and either
+redirect or `tee` the output if you want it saved to a file;
+`report` is the customary filename for the output.
