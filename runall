@@ -8,7 +8,7 @@
 PROGS="./fmt /usr/bin/fmt fmt.bash fmt.ksh fmt.pl fmt.py fmt.sh"
 
 # Short version for testing
-PROGS="./fmt /usr/bin/fmt fmt.ksh fmt.pl fmt.py"
+# PROGS="./fmt /usr/bin/fmt fmt.ksh fmt.pl fmt.py"
 
 # Note: awk and Java treated specially after main loop
 # Java, and various *awk impls, easily added on OpenBSD via pkg_add
