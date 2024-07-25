@@ -10,3 +10,16 @@ any release of JDK 11 or later should suffice.
 
 Using your system's package manager, install as many Awk implementations as
 you can find - gawk hawk mawk nawk are the most likely ones.
+
+== Before you run
+
+There are two sets of tests in the variable PROGS in the runall script.
+The first one is the full one; the second is a shorter one (omitting the
+slowest tests) for testing, mainly used when modifying the base package
+(i.e., for normal use you want the full one). Edit runall to un-comment
+the one you want.
+
+== Running
+
+Just type "make". The results will be displayed, and also recorded in 
+the file "results".
