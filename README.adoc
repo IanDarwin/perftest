@@ -3,15 +3,24 @@
 Patterned after a shorter comparison in
 https://learningtree.com/396[Learning Tree Course 396, Unix Tools & Utilities].
 
-== Broken!
+== Broken on Linux!
 
-This depends on the original BSD version of the time command; I will either add 
-that here, or change the report gatherer to adapt to other variants of "time".
+This depends on the output format of the original BSD version of the
+time command.  I have added the source here, but it will take a bit of
+porting to run on foreign systems.  Meanwhile, you *might* be able to
+make it work on Linux with something like
+
+	alias time='time -f "  %E real     %U user   %S system"'
+
+But this has not been tested!
+
+A minimally-invasive pull request that gets it going either way would be appreciated.
 
 == Pre-requisites
 
-You need to install a Java SDK ("JDK"). The current release is Java 22, but
-any release of JDK 11 or later should suffice.
+To use the Java version, you need to install a Java SDK ("JDK"). The
+current release is Java 23, but the code is simple enough that any
+release of JDK 11 or later should suffice.
 
 Using your system's package manager, install as many Awk implementations as
 you can find - gawk hawk mawk nawk are the most likely ones.
